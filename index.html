@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고위드 x 네이버페이 | 고위드 법인카드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gowid-primary: #0D2818;
+    --gowid-accent: #1B4D38;
+    --gowid-blue: #22664A;
+    --gowid-green: #10B981;
+    --naver-green: #03C75A;
+    --text-primary: #1a2420;
+    --text-secondary: #52615b;
+    --text-muted: #8a9692;
+    --bg-light: #F7FAF8;
+    --bg-card: #FFFFFF;
+    --gradient-hero: linear-gradient(160deg, #060F0B 0%, #0D2818 30%, #153D2C 70%, #1B4D38 100%);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    background: var(--gradient-hero);
+    padding: 48px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 20%, rgba(27, 77, 56, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(21, 61, 44, 0.3) 0%, transparent 50%);
+    animation: float 8s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-2%, 2%); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .partner-logos {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .partner-logos .logo-gowid {
+    font-size: 20px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.08em;
+  }
+
+  .partner-logos .logo-x {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .partner-logos .logo-npay {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .partner-logos .npay-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: #03C75A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .partner-logos .npay-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    margin-bottom: 8px;
+    letter-spacing: -0.03em;
+  }
+
+  .hero h1 strong {
+    display: block;
+    font-size: 34px;
+    font-weight: 800;
+    color: #fff;
+    margin-top: 4px;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-card-visual {
+    margin-top: 36px;
+    position: relative;
+  }
+
+  .card-mockup {
+    width: 320px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    transform: perspective(800px) rotateY(-3deg) rotateX(2deg);
+    background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 40%, #1f1f1f 70%, #111 100%);
+    border-radius: 18px;
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 168, 76, 0.15), inset 0 1px 0 rgba(201, 168, 76, 0.1);
+    overflow: hidden;
+    padding: 24px 28px;
+    animation: cardFloat 2.5s ease-in-out infinite;
+  }
+
+  @keyframes cardFloat {
+    0%, 100% {
+      transform: perspective(800px) rotateY(-3deg) rotateX(2deg) translateY(0px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 168, 76, 0.15), inset 0 1px 0 rgba(201, 168, 76, 0.1);
+    }
+    50% {
+      transform: perspective(800px) rotateY(-1deg) rotateX(1deg) translateY(-12px);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(201, 168, 76, 0.25), inset 0 1px 0 rgba(201, 168, 76, 0.15);
+    }
+  }
+
+  .card-mockup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 40%, rgba(255,255,255,0.02) 100%);
+    pointer-events: none;
+  }
+
+  .card-mockup::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.06) 45%,
+      rgba(255, 255, 255, 0.13) 50%,
+      rgba(255, 255, 255, 0.06) 55%,
+      transparent 60%
+    );
+    transform: rotate(-30deg);
+    pointer-events: none;
+    animation: cardShine 3s ease-in-out infinite;
+  }
+
+  @keyframes cardShine {
+    0%, 100% { left: -100%; opacity: 0; }
+    15% { opacity: 1; }
+    50% { left: 150%; opacity: 1; }
+    65%, 100% { opacity: 0; left: 150%; }
+  }
+
+  .card-logo-text {
+    position: relative;
+    z-index: 1;
+    font-size: 17px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+  }
+
+  .card-chip-svg {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 30px;
+    border-radius: 6px;
+    background: linear-gradient(145deg, #C9A84C, #E8D48B, #B8923A, #D4B85C);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  .card-chip-svg::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.15);
+  }
+
+  .card-chip-svg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: rgba(0,0,0,0.1);
+  }
+
+  .card-chip-inner {
+    width: 18px;
+    height: 14px;
+    border: 1.5px solid rgba(0,0,0,0.12);
+    border-radius: 2px;
+  }
+
+  .card-number-row {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 3px;
+    font-weight: 400;
+    margin-bottom: 14px;
+  }
+
+  .card-bottom-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .card-holder-label {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.25);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .card-holder-name {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  .card-brand-logo {
+    display: flex;
+    gap: 0;
+  }
+
+  .card-brand-logo .mc-circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+
+  .card-brand-logo .mc-circle:first-child {
+    background: #EB001B;
+  }
+
+  .card-brand-logo .mc-circle:last-child {
+    background: #F79E1B;
+    margin-left: -10px;
+  }
+
+  /* ===== PROBLEM SECTION ===== */
+  .section {
+    padding: 56px 24px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .problem-section {
+    background: var(--bg-light);
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .problem-section .inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .problem-section .inner .problem-text {
+    max-width: 480px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gowid-accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .problem-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.45;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+
+  .problem-title .highlight {
+    color: var(--gowid-accent);
+  }
+
+  .problem-title .underline-em {
+    text-decoration: underline;
+    text-decoration-color: #C6DDD4;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 3px;
+  }
+
+  .problem-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ===== CASHFLOW COMPARE ===== */
+  .cf-compare {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+
+  .cf-panel {
+    flex: 1;
+    min-width: 0;
+    padding: 24px 20px 22px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  @media (max-width: 600px) {
+    .cf-compare {
+      flex-direction: column;
+      border-radius: 20px;
+    }
+    .cf-panel { border-radius: 0; }
+  }
+
+  /* AS-IS panel */
+  .cf-panel.as-is {
+    background: #fff;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  }
+
+  /* TO-BE panel */
+  .cf-panel.to-be {
+    background: linear-gradient(145deg, #0D2818, #1B4D38);
+    box-shadow: 0 4px 24px rgba(13, 40, 24, 0.35);
+  }
+
+  .cf-panel.to-be::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 80% 30%, rgba(27, 77, 56, 0.25) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .cf-panel-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+  }
+
+  .cf-panel.as-is .cf-panel-tag {
+    background: #FEF2F2;
+    color: #EF4444;
+  }
+
+  .cf-panel.to-be .cf-panel-tag {
+    background: rgba(27, 77, 56, 0.3);
+    color: #A7D7C5;
+  }
+
+  .cf-panel-title {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    line-height: 1.45;
+  }
+
+  .cf-panel.as-is .cf-panel-title {
+    color: var(--text-primary);
+  }
+
+  .cf-panel.to-be .cf-panel-title {
+    color: #fff;
+  }
+
+  /* Mini graph */
+  .mini-graph {
+    height: 90px;
+    position: relative;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .cf-panel.as-is .mini-graph {
+    background: #FAFBFC;
+  }
+
+  .cf-panel.to-be .mini-graph {
+    background: rgba(255,255,255,0.04);
+  }
+
+  .mini-graph svg {
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+  }
+
+  /* Detail items */
+  .cf-detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cf-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+
+  .cf-panel.as-is .cf-detail-item { color: var(--text-secondary); }
+  .cf-panel.to-be .cf-detail-item { color: rgba(255,255,255,0.75); }
+
+  .cf-detail-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .cf-panel.as-is .cf-detail-icon {
+    background: #FEF2F2;
+  }
+
+  .cf-panel.to-be .cf-detail-icon {
+    background: rgba(255,255,255,0.12);
+  }
+
+  .cf-detail-text {
+    flex: 1;
+  }
+
+  .cf-detail-text strong {
+    font-weight: 700;
+  }
+
+  .cf-panel.as-is .cf-detail-text strong { color: var(--text-primary); }
+  .cf-panel.to-be .cf-detail-text strong { color: #fff; }
+
+  /* Arrow between panels */
+  .cf-arrow-between {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cf-arrow-between .arrow-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gowid-primary), var(--gowid-accent));
+    color: #fff;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(13, 40, 24, 0.4);
+    flex-shrink: 0;
+    margin-left: -18px;
+    margin-right: -18px;
+  }
+
+  @media (max-width: 600px) {
+    .cf-arrow-between {
+      width: auto;
+      height: 0;
+    }
+    .cf-arrow-between .arrow-circle {
+      margin: -18px auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  /* ===== ANSWER SECTION ===== */
+  .answer-section {
+    text-align: center;
+    padding: 48px 24px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .answer-section .big-quote {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+
+  .answer-section .big-quote .accent {
+    color: var(--gowid-accent);
+  }
+
+  .answer-section .big-quote .green-accent {
+    color: var(--gowid-green);
+  }
+
+  .answer-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ===== BENEFITS SECTION ===== */
+  .benefits-section {
+    background: var(--bg-light);
+    padding: 56px 24px;
+  }
+
+  .benefits-inner {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .benefits-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .benefits-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .benefit-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .benefit-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .benefit-icon.purple { background: #ECFDF5; }
+  .benefit-icon.blue { background: #EFF6FF; }
+  .benefit-icon.green { background: #ECFDF5; }
+  .benefit-icon.orange { background: #FFF7ED; }
+  .benefit-icon.pink { background: #FDF2F8; }
+
+  .benefit-content h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  .benefit-content p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  .benefit-tag {
+    display: inline-block;
+    background: var(--gowid-accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-top: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .benefit-tag.green-tag {
+    background: var(--gowid-green);
+  }
+
+  /* ===== TARGET SECTION ===== */
+  .target-section {
+    padding: 56px 24px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .target-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-align: center;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    line-height: 1.45;
+  }
+
+  .target-card {
+    border: 1px solid #E5E7EB;
+    border-radius: 20px;
+    padding: 28px 24px;
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .target-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  .target-card.commerce::before { background: linear-gradient(90deg, var(--naver-green), #06D66B); }
+  .target-card.ads::before { background: linear-gradient(90deg, var(--gowid-accent), var(--gowid-blue)); }
+  .target-card.process-card::before { background: linear-gradient(90deg, var(--gowid-primary), var(--gowid-accent)); }
+
+  .target-card .target-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .target-card.commerce .target-label { color: var(--naver-green); }
+  .target-card.ads .target-label { color: var(--gowid-accent); }
+
+  .target-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .target-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .target-card .scenario {
+    margin-top: 16px;
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .scenario-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  .scenario-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .scenario-step:last-child { margin-bottom: 0; }
+
+  .scenario-step .step-num {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gowid-accent);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .scenario-step .step-arrow {
+    color: var(--text-muted);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* ===== TRUST SECTION ===== */
+  .trust-section {
+    background: var(--bg-light);
+    padding: 48px 24px;
+    text-align: center;
+  }
+
+  .trust-inner {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .trust-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .trust-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 24px;
+  }
+
+  .stat-item .stat-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gowid-primary);
+    letter-spacing: -0.04em;
+  }
+
+  .stat-item .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .trust-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    opacity: 0.4;
+  }
+
+  .trust-logo {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  /* ===== PROCESS SECTION ===== */
+  .process-section {
+    padding: 56px 24px;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .process-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+  }
+
+  .process-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    text-align: left;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 16px;
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    width: 20px;
+    height: calc(100% - 40px);
+    border-top: 2px solid #E5E7EB;
+    border-right: 2px solid #E5E7EB;
+    border-bottom: 2px solid #E5E7EB;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gowid-primary), var(--gowid-accent));
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .step-text h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
+
+  .step-text p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .time-badge {
+    display: inline-block;
+    background: #ECFDF5;
+    color: var(--gowid-green);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 100px;
+    margin-top: 6px;
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta {
+    background: var(--gradient-hero);
+    padding: 56px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 50% 50%, rgba(27, 77, 56, 0.35) 0%, transparent 60%);
+  }
+
+  .final-cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .final-cta h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.45;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+
+  .final-cta p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .cta-button-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--gowid-primary);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-button-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .cta-button-large .arrow-right {
+    font-size: 18px;
+    transition: transform 0.2s;
+  }
+
+  .cta-button-large:hover .arrow-right {
+    transform: translateX(3px);
+  }
+
+  /* ===== FLOATING CTA ===== */
+  .floating-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent;
+    border-top: none;
+    padding: 12px 24px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    box-shadow: none;
+  }
+
+  .floating-cta-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .floating-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background: linear-gradient(135deg, var(--gowid-primary), var(--gowid-accent));
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: opacity 0.2s, transform 0.15s;
+    box-shadow: 0 4px 16px rgba(13, 40, 24, 0.4);
+  }
+
+  .floating-btn:hover {
+    opacity: 0.95;
+    transform: scale(1.01);
+  }
+
+  .floating-btn:active {
+    transform: scale(0.99);
+  }
+
+  .floating-btn .arrow-right {
+    font-size: 18px;
+    transition: transform 0.2s;
+  }
+
+  /* ===== FOOTER NOTE ===== */
+  .footer-note {
+    padding: 24px;
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .footer-note p {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 24px; }
+    .hero h1 strong { font-size: 28px; }
+    .problem-title { font-size: 22px; }
+    .trust-stats { gap: 20px; }
+    .stat-item .stat-num { font-size: 24px; }
+    .card-mockup { width: 260px; height: 163px; padding: 20px 22px; }
+    .card-logo-text { font-size: 14px; margin-bottom: 12px; }
+    .card-chip-svg { width: 34px; height: 26px; margin-bottom: 14px; }
+    .card-number-row { font-size: 12px; margin-bottom: 10px; }
+  }
+
+  @media (min-width: 768px) {
+    .hero { padding: 64px 24px 72px; }
+    .hero h1 { font-size: 32px; }
+    .hero h1 strong { font-size: 40px; }
+    .problem-title { font-size: 28px; }
+    .benefits-title { font-size: 26px; }
+    .card-mockup { width: 380px; height: 238px; padding: 28px 32px; }
+    .card-logo-text { font-size: 20px; }
+    .card-chip-svg { width: 46px; height: 34px; }
+    .card-number-row { font-size: 16px; }
+  }
+
+  /* Smooth entrance animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="partner-logos">
+      <span class="logo-gowid">GOWID</span>
+      <span class="logo-x">&times;</span>
+      <span class="logo-npay">
+        <span class="npay-icon">N</span>
+        <span class="npay-text">pay</span>
+      </span>
+    </div>
+    <h1>
+      성장하는 기업을 위한 카드 한도
+      <strong>고위드 법인카드</strong>
+    </h1>
+    <p class="hero-sub">법인사업자 전용</p>
+
+    <div class="hero-card-visual">
+      <div class="card-mockup">
+        <div class="card-logo-text">GOWID</div>
+        <div class="card-chip-svg"><div class="card-chip-inner"></div></div>
+        <div class="card-number-row">&bull;&bull;&bull;&bull; &nbsp; &bull;&bull;&bull;&bull; &nbsp; &bull;&bull;&bull;&bull; &nbsp; &bull;&bull;&bull;&bull;</div>
+        <div class="card-bottom-row">
+          <div>
+            <div class="card-holder-label">Corporate Card</div>
+            <div class="card-holder-name">GOWID CORP</div>
+          </div>
+          <div class="card-brand-logo">
+            <div class="mc-circle"></div>
+            <div class="mc-circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="problem-section">
+  <div class="inner">
+    <div class="fade-up problem-text">
+      <p class="section-eyebrow">Problem</p>
+      <h2 class="problem-title">
+        매출은 성장하는데,<br>
+        왜 <span class="underline-em">'현금'</span>이<br>
+        부족할까요?
+      </h2>
+      <p class="problem-desc">
+        매출은 발생했지만, 정산까지 평균 2~8주.<br>
+        그 사이에도 매입·광고·운영비는 멈추지 않습니다.
+      </p>
+    </div>
+
+    <div class="cf-compare fade-up">
+      <!-- AS-IS -->
+      <div class="cf-panel as-is">
+        <div class="cf-panel-tag">AS-IS</div>
+        <div class="cf-panel-title">매달 반복되는<br>현금흐름 타이밍 문제</div>
+
+        <div class="mini-graph">
+          <svg viewBox="0 0 260 90" fill="none">
+            <defs>
+              <linearGradient id="gapFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#EF4444" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#EF4444" stop-opacity="0.04"/>
+              </linearGradient>
+            </defs>
+            <!-- Grid -->
+            <line x1="10" y1="35" x2="250" y2="35" stroke="#F3F4F6" stroke-width="0.7"/>
+            <line x1="10" y1="55" x2="250" y2="55" stroke="#F3F4F6" stroke-width="0.7"/>
+            <!-- Gap fill between spending and balance -->
+            <path d="M12,76 C40,75 65,74 100,68 C135,60 160,46 185,30 C210,18 235,13 250,10
+                     L250,42 C235,46 210,52 185,60 C160,68 135,74 100,77 C65,79 40,79 12,79 Z"
+                  fill="url(#gapFill)"/>
+            <!-- 지출 line (cumulative spending - S curve) -->
+            <path d="M12,76 C40,75 65,74 100,68 C135,60 160,46 185,30 C210,18 235,13 250,10"
+                  stroke="#EF4444" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.65"/>
+            <!-- 현금잔고 line (cash balance - lower, lags behind) -->
+            <path d="M12,79 C40,79 65,79 100,77 C135,74 160,68 185,60 C210,52 235,46 250,42"
+                  stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <!-- GAP bracket -->
+            <line x1="205" y1="20" x2="205" y2="51" stroke="#EF4444" stroke-width="1.2" opacity="0.5" stroke-linecap="round"/>
+            <line x1="202" y1="20" x2="208" y2="20" stroke="#EF4444" stroke-width="1" opacity="0.5"/>
+            <line x1="202" y1="51" x2="208" y2="51" stroke="#EF4444" stroke-width="1" opacity="0.5"/>
+            <text x="218" y="31" font-size="8" font-weight="700" fill="#EF4444" opacity="0.8">GAP</text>
+            <!-- X axis labels (time) -->
+            <text x="12" y="88" font-size="7" fill="#D1D5DB">1월</text>
+            <text x="75" y="88" font-size="7" fill="#D1D5DB">2월</text>
+            <text x="140" y="88" font-size="7" fill="#D1D5DB">3월</text>
+            <text x="205" y="88" font-size="7" fill="#D1D5DB">4월</text>
+            <!-- Legend -->
+            <circle cx="10" cy="6" r="3" fill="#EF4444" opacity="0.6"/>
+            <text x="17" y="9" font-size="7" fill="#9CA3AF">지출</text>
+            <circle cx="50" cy="6" r="3" fill="#6B7280"/>
+            <text x="57" y="9" font-size="7" fill="#9CA3AF">현금잔고</text>
+          </svg>
+        </div>
+
+        <div class="cf-detail-list">
+          <div class="cf-detail-item">
+            <div class="cf-detail-icon">&#128680;</div>
+            <div class="cf-detail-text"><strong>즉시 지출</strong>, 정산은 30~60일 후</div>
+          </div>
+          <div class="cf-detail-item">
+            <div class="cf-detail-icon">&#128200;</div>
+            <div class="cf-detail-text">성장할수록 <strong>현금 갭 확대</strong></div>
+          </div>
+          <div class="cf-detail-item">
+            <div class="cf-detail-icon">&#9940;</div>
+            <div class="cf-detail-text">재고·광고 <strong>타이밍을 놓침</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="cf-arrow-between">
+        <div class="arrow-circle">&#8594;</div>
+      </div>
+
+      <!-- TO-BE -->
+      <div class="cf-panel to-be">
+        <div class="cf-panel-tag">WITH GOWID</div>
+        <div class="cf-panel-title">고위드 법인카드로<br>멈추지 않는 성장</div>
+
+        <div class="mini-graph">
+          <svg viewBox="0 0 260 90" fill="none">
+            <defs>
+              <linearGradient id="growthFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#10B981" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#10B981" stop-opacity="0.01"/>
+              </linearGradient>
+            </defs>
+            <!-- Grid -->
+            <line x1="0" y1="30" x2="260" y2="30" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
+            <line x1="0" y1="55" x2="260" y2="55" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
+            <!-- Growth area -->
+            <path d="M8,62 C40,56 80,46 120,38 C160,30 200,22 252,12 L252,82 L8,82 Z" fill="url(#growthFill)"/>
+            <!-- Smooth growth line -->
+            <path d="M8,62 C40,56 80,46 120,38 C160,30 200,22 252,12" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <!-- Bridge markers along the curve -->
+            <rect x="52" y="48" width="36" height="13" rx="6.5" fill="#1B4D38" opacity="0.55"/>
+            <text x="70" y="57" text-anchor="middle" font-size="7" font-weight="700" fill="#fff" opacity="0.9">BRIDGE</text>
+            <rect x="132" y="30" width="36" height="13" rx="6.5" fill="#1B4D38" opacity="0.55"/>
+            <text x="150" y="39" text-anchor="middle" font-size="7" font-weight="700" fill="#fff" opacity="0.9">BRIDGE</text>
+            <rect x="210" y="15" width="36" height="13" rx="6.5" fill="#1B4D38" opacity="0.55"/>
+            <text x="228" y="24" text-anchor="middle" font-size="7" font-weight="700" fill="#fff" opacity="0.9">BRIDGE</text>
+            <!-- Start / End dots -->
+            <circle cx="8" cy="62" r="3.5" fill="#10B981" opacity="0.6"/>
+            <circle cx="252" cy="12" r="5" fill="#10B981"/>
+            <circle cx="252" cy="12" r="8" fill="#10B981" opacity="0.15"/>
+            <!-- End label -->
+            <text x="252" y="8" text-anchor="middle" font-size="6" font-weight="600" fill="#10B981" opacity="0.8"></text>
+            <!-- Legend -->
+            <circle cx="8" cy="8" r="3" fill="#10B981"/>
+            <text x="15" y="11" font-size="7" fill="rgba(255,255,255,0.45)">성장 곡선</text>
+            <rect x="65" y="5" width="8" height="6" rx="3" fill="#1B4D38" opacity="0.55"/>
+            <text x="77" y="11" font-size="7" fill="rgba(255,255,255,0.45)">카드 한도 브릿지</text>
+          </svg>
+        </div>
+
+        <div class="cf-detail-list">
+          <div class="cf-detail-item">
+            <div class="cf-detail-icon">&#9889;</div>
+            <div class="cf-detail-text">최대 <strong>87일 유예</strong>로 갭 해소</div>
+          </div>
+          <div class="cf-detail-item">
+            <div class="cf-detail-icon">&#128200;</div>
+            <div class="cf-detail-text">정산 전에도 <strong>재고·광고 집행</strong></div>
+          </div>
+          <div class="cf-detail-item">
+            <div class="cf-detail-icon">&#128640;</div>
+            <div class="cf-detail-text">매출→한도의 <strong>선순환 구조</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ANSWER ===== -->
+<section class="answer-section fade-up">
+  <h2 class="big-quote">
+    부족한 건 <span class="accent">'자금'</span>이 아니라<br>
+    <span class="green-accent">'타이밍'</span>입니다.
+  </h2>
+  <p class="answer-sub">
+    매입과 정산 사이 현금흐름 갭,<br>
+    고위드 카드 한도가 <strong>브릿지</strong>합니다.
+  </p>
+</section>
+
+<!-- ===== BENEFITS ===== -->
+<section class="benefits-section">
+  <div class="benefits-inner">
+    <p class="section-eyebrow" style="text-align:center;">Benefits</p>
+    <h2 class="benefits-title">고위드만의 금융 솔루션</h2>
+    <p class="benefits-sub">현금흐름 걱정 없이 비즈니스에 집중하세요</p>
+
+    <div class="benefit-card fade-up">
+      <div class="benefit-icon purple">
+        <span>&#9889;</span>
+      </div>
+      <div class="benefit-content">
+        <h3>현금흐름 기반 카드 한도</h3>
+        <p>실시간 매출과 정산 데이터를 기반으로 한도를 산정합니다.<br>재무제표 위주 심사가 아닌, 실제 비즈니스 흐름을 반영합니다.</p>
+      </div>
+    </div>
+
+    <div class="benefit-card fade-up">
+      <div class="benefit-icon blue">
+        <span>&#128260;</span>
+      </div>
+      <div class="benefit-content">
+        <h3>월복원 한도 상품</h3>
+        <p>매월 사용한 한도가 자동으로 복원됩니다.<br>성장하는 비즈니스에 맞춰 유연하게 운영할 수 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="benefit-card fade-up">
+      <div class="benefit-icon green">
+        <span>&#128176;</span>
+      </div>
+      <div class="benefit-content">
+        <h3>결제 대금 캐시백</h3>
+        <p>카드 결제 금액에 대해 캐시백이 적립됩니다.<br>매입비를 카드로 전환하면 절감 효과를 극대화할 수 있습니다.</p>
+        <span class="benefit-tag green-tag">최대 0.5% 캐시백</span>
+      </div>
+    </div>
+
+    <div class="benefit-card fade-up">
+      <div class="benefit-icon orange">
+        <span>&#128179;</span>
+      </div>
+      <div class="benefit-content">
+        <h3>매입처 카드 결제 전환</h3>
+        <p>기존 현금·이체 결제를 카드로 전환하세요.<br>결제 유예 효과와 캐시백을 동시에 누릴 수 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="benefit-card fade-up">
+      <div class="benefit-icon pink">
+        <span>&#128640;</span>
+      </div>
+      <div class="benefit-content">
+        <h3>광고비 특화 카드</h3>
+        <p>네이버, 구글, 메타 등 주요 광고 플랫폼<br>결제에 최적화된 특화 카드를 제공합니다.</p>
+        <span class="benefit-tag">최대 2.3% 적립</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TARGET PERSONAS ===== -->
+<section class="target-section">
+  <div class="fade-up">
+    <p class="section-eyebrow" style="text-align:center;">For You</p>
+    <h2 class="target-title">
+      이런 비즈니스에<br>
+      고위드를 추천합니다
+    </h2>
+  </div>
+
+  <div class="target-card commerce fade-up">
+    <h3>온라인 판매처에서 정산받는 커머스 셀러</h3>
+    <p>매입은 먼저, 정산은 나중.<br>그 사이 현금 부족으로 다음 시즌 재고를 놓치고 계시진 않나요?</p>
+    <div class="scenario">
+      <div class="scenario-title">이렇게 활용하세요</div>
+      <div class="scenario-step">
+        <span class="step-num">1</span>
+        매입 대금을 고위드 법인카드로 결제
+      </div>
+      <div class="scenario-step">
+        <span class="step-arrow">&darr;</span>
+      </div>
+      <div class="scenario-step">
+        <span class="step-num">2</span>
+        판매 정산금으로 카드 대금 상환
+      </div>
+      <div class="scenario-step">
+        <span class="step-arrow">&darr;</span>
+      </div>
+      <div class="scenario-step">
+        <span class="step-num">3</span>
+        현금 공백 없이 성장 사이클 유지
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== TRUST ===== -->
+
+<!-- ===== PROCESS ===== -->
+<section class="process-section">
+  <div class="fade-up">
+    <p class="section-eyebrow">How it works</p>
+    <h2 class="process-title">간편한 도입 절차</h2>
+    <p class="process-sub">복잡한 서류 없이 빠르게 시작하세요</p>
+  </div>
+
+  <div class="target-card process-card fade-up">
+    <div class="scenario">
+      <div class="scenario-step">
+        <span class="step-num">1</span>
+        간편한 비대면 신청
+      </div>
+      <div class="scenario-step">
+        <span class="step-arrow">&darr;</span>
+      </div>
+      <div class="scenario-step">
+        <span class="step-num">2</span>
+        실시간 금융 흐름을 통한 빠른 한도 산정
+      </div>
+      <div class="scenario-step">
+        <span class="step-arrow">&darr;</span>
+      </div>
+      <div class="scenario-step">
+        <span class="step-num">3</span>
+        승인 후 즉시 발급 시작
+        <span class="time-badge" style="margin-left:8px;">3~5일 내 수령</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="final-cta-inner fade-up">
+    <h2>
+      '성장가능성'을<br>
+      카드 한도에 더합니다.
+    </h2>
+    <p>
+      실시간 데이터를 기반으로<br>
+      성장 단계에 맞는 충분한 한도를 확인해보세요.
+    </p>
+    <div style="margin-top:32px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.12);">
+      <p class="trust-title" style="color: rgba(255,255,255,0.6);">이미 많은 법인이 고위드와 함께합니다</p>
+      <div class="trust-stats" style="margin-bottom:0;">
+        <div class="stat-item">
+          <div class="stat-num" style="color:#fff;">12,000+</div>
+          <div class="stat-label" style="color:rgba(255,255,255,0.5);">이용 법인 수</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" style="color:#fff;">1.2조+</div>
+          <div class="stat-label" style="color:rgba(255,255,255,0.5);">누적 결제액</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER NOTE ===== -->
+<div class="footer-note">
+  <p>
+    고위드 주식회사 | 서울특별시 강남구<br>
+    카드 발급 및 한도는 심사 결과에 따라 달라질 수 있습니다.<br>
+    캐시백 및 적립율은 카드 상품별로 상이하며, 변동될 수 있습니다.
+  </p>
+</div>
+
+<!-- ===== FLOATING CTA ===== -->
+<div class="floating-cta">
+  <div class="floating-cta-inner">
+    <a href="https://www.gowid.com/card-apply-lead" class="floating-btn">
+      고위드 법인카드 발급하러 가기
+      <span class="arrow-right">&rarr;</span>
+    </a>
+  </div>
+</div>
+
+<!-- ===== SCROLL ANIMATION ===== -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  document.querySelectorAll('.fade-up').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
