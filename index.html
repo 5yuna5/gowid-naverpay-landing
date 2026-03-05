@@ -1022,19 +1022,21 @@
   .floating-cta-inner {
     max-width: 720px;
     margin: 0 auto;
+    display: flex;
+    gap: 8px;
   }
 
   .floating-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    width: 100%;
+    gap: 6px;
+    flex: 1;
     background: linear-gradient(135deg, var(--gowid-primary), var(--gowid-accent));
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
-    padding: 16px;
+    padding: 16px 12px;
     border: none;
     border-radius: 14px;
     cursor: pointer;
@@ -1042,6 +1044,11 @@
     letter-spacing: -0.02em;
     transition: opacity 0.2s, transform 0.15s;
     box-shadow: 0 4px 16px rgba(91, 197, 0, 0.4);
+  }
+
+  .floating-btn.secondary {
+    background: #1a1a1a;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   }
 
   .floating-btn:hover {
@@ -1054,7 +1061,7 @@
   }
 
   .floating-btn .arrow-right {
-    font-size: 18px;
+    font-size: 16px;
     transition: transform 0.2s;
   }
 
@@ -1287,7 +1294,7 @@
 <!-- ===== ANSWER ===== -->
 <section class="answer-section fade-up">
   <h2 class="big-quote">
-    부족한 건 <span class="accent" style="color:var(--text-primary);">'자금'</span>이 아니라<br>
+    부족한 건 <span class="accent" style="color:#5BC500;">'자금'</span>이 아니라<br>
     <span class="green-accent" style="color:#5BC500;">'타이밍'</span>입니다.
   </h2>
   <p class="answer-sub">
@@ -1469,8 +1476,12 @@
 <!-- ===== FLOATING CTA ===== -->
 <div class="floating-cta">
   <div class="floating-cta-inner">
+    <a href="https://drive.google.com/file/d/1qBB-4jR19NY-VVTd3BZ7PWsKFV7Ill6_/view" target="_blank" class="floating-btn secondary">
+      커머스 리포트 확인하기
+      <span class="arrow-right">&rarr;</span>
+    </a>
     <a href="https://www.gowid.com/card-apply-lead" class="floating-btn">
-      고위드 법인카드 발급하러 가기
+      고위드 법인카드 알아보기
       <span class="arrow-right">&rarr;</span>
     </a>
   </div>
