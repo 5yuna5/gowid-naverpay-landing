@@ -8,9 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gowid-primary: #0D2818;
-    --gowid-accent: #1B4D38;
-    --gowid-blue: #22664A;
+    --gowid-primary: #4AA800;
+    --gowid-accent: #5BC500;
+    --gowid-blue: #4AA800;
     --gowid-green: #10B981;
     --naver-green: #03C75A;
     --text-primary: #1a2420;
@@ -397,15 +397,15 @@
 
   /* TO-BE panel */
   .cf-panel.to-be {
-    background: linear-gradient(145deg, #0D2818, #1B4D38);
-    box-shadow: 0 4px 24px rgba(13, 40, 24, 0.35);
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   }
 
   .cf-panel.to-be::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(ellipse at 80% 30%, rgba(27, 77, 56, 0.25) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 80% 30%, rgba(91, 197, 0, 0.08) 0%, transparent 60%);
     pointer-events: none;
   }
 
@@ -426,8 +426,8 @@
   }
 
   .cf-panel.to-be .cf-panel-tag {
-    background: rgba(27, 77, 56, 0.3);
-    color: #A7D7C5;
+    background: rgba(91, 197, 0, 0.2);
+    color: #9DE84A;
   }
 
   .cf-panel-title {
@@ -538,7 +538,7 @@
     background: linear-gradient(135deg, var(--gowid-primary), var(--gowid-accent));
     color: #fff;
     font-size: 16px;
-    box-shadow: 0 4px 12px rgba(13, 40, 24, 0.4);
+    box-shadow: 0 4px 12px rgba(91, 197, 0, 0.4);
     flex-shrink: 0;
     margin-left: -18px;
     margin-right: -18px;
@@ -1041,7 +1041,7 @@
     text-decoration: none;
     letter-spacing: -0.02em;
     transition: opacity 0.2s, transform 0.15s;
-    box-shadow: 0 4px 16px rgba(13, 40, 24, 0.4);
+    box-shadow: 0 4px 16px rgba(91, 197, 0, 0.4);
   }
 
   .floating-btn:hover {
@@ -1245,11 +1245,11 @@
             <!-- Smooth growth line -->
             <path d="M8,62 C40,56 80,46 120,38 C160,30 200,22 252,12" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" fill="none"/>
             <!-- Bridge markers along the curve -->
-            <rect x="52" y="48" width="36" height="13" rx="6.5" fill="#1B4D38" opacity="0.55"/>
+            <rect x="52" y="48" width="36" height="13" rx="6.5" fill="#3A7A00" opacity="0.55"/>
             <text x="70" y="57" text-anchor="middle" font-size="7" font-weight="700" fill="#fff" opacity="0.9">BRIDGE</text>
-            <rect x="132" y="30" width="36" height="13" rx="6.5" fill="#1B4D38" opacity="0.55"/>
+            <rect x="132" y="30" width="36" height="13" rx="6.5" fill="#3A7A00" opacity="0.55"/>
             <text x="150" y="39" text-anchor="middle" font-size="7" font-weight="700" fill="#fff" opacity="0.9">BRIDGE</text>
-            <rect x="210" y="15" width="36" height="13" rx="6.5" fill="#1B4D38" opacity="0.55"/>
+            <rect x="210" y="15" width="36" height="13" rx="6.5" fill="#3A7A00" opacity="0.55"/>
             <text x="228" y="24" text-anchor="middle" font-size="7" font-weight="700" fill="#fff" opacity="0.9">BRIDGE</text>
             <!-- Start / End dots -->
             <circle cx="8" cy="62" r="3.5" fill="#10B981" opacity="0.6"/>
@@ -1260,7 +1260,7 @@
             <!-- Legend -->
             <circle cx="8" cy="8" r="3" fill="#10B981"/>
             <text x="15" y="11" font-size="7" fill="rgba(255,255,255,0.45)">성장 곡선</text>
-            <rect x="65" y="5" width="8" height="6" rx="3" fill="#1B4D38" opacity="0.55"/>
+            <rect x="65" y="5" width="8" height="6" rx="3" fill="#3A7A00" opacity="0.55"/>
             <text x="77" y="11" font-size="7" fill="rgba(255,255,255,0.45)">카드 한도 브릿지</text>
           </svg>
         </div>
