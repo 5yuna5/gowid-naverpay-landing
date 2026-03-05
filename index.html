@@ -77,11 +77,9 @@
     margin-bottom: 36px;
   }
 
-  .partner-logos .logo-gowid {
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--text-primary);
-    letter-spacing: 0.08em;
+  .partner-logos .logo-gowid-img {
+    height: 24px;
+    object-fit: contain;
   }
 
   .partner-logos .logo-x {
@@ -211,14 +209,14 @@
     65%, 100% { opacity: 0; left: 150%; }
   }
 
-  .card-logo-text {
+  .card-logo-img {
     position: relative;
     z-index: 1;
-    font-size: 17px;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.92);
-    letter-spacing: 0.12em;
+    height: 18px;
+    object-fit: contain;
     margin-bottom: 16px;
+    filter: brightness(0) invert(1);
+    opacity: 0.92;
   }
 
   .card-chip-svg {
@@ -1134,7 +1132,7 @@
 <section class="hero">
   <div class="hero-content">
     <div class="partner-logos">
-      <span class="logo-gowid">GOWID</span>
+      <img src="https://www.gowid.com/img/gowid-logo.png" alt="GOWID" class="logo-gowid-img" />
       <span class="logo-x">&times;</span>
       <span class="logo-npay">
         <span class="npay-icon">N</span>
@@ -1149,17 +1147,13 @@
 
     <div class="hero-card-visual">
       <div class="card-mockup">
-        <div class="card-logo-text">GOWID</div>
+        <img src="https://www.gowid.com/img/gowid-logo.png" alt="GOWID" class="card-logo-img" />
         <div class="card-chip-svg"><div class="card-chip-inner"></div></div>
         <div class="card-number-row">&bull;&bull;&bull;&bull; &nbsp; &bull;&bull;&bull;&bull; &nbsp; &bull;&bull;&bull;&bull; &nbsp; &bull;&bull;&bull;&bull;</div>
         <div class="card-bottom-row">
           <div>
             <div class="card-holder-label">Corporate Card</div>
             <div class="card-holder-name">GOWID CORP</div>
-          </div>
-          <div class="card-brand-logo">
-            <div class="mc-circle"></div>
-            <div class="mc-circle"></div>
           </div>
         </div>
       </div>
