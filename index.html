@@ -18,7 +18,7 @@
     --text-muted: #8a9692;
     --bg-light: #F7FAF8;
     --bg-card: #FFFFFF;
-    --gradient-hero: linear-gradient(160deg, #060F0B 0%, #0D2818 30%, #153D2C 70%, #1B4D38 100%);
+    --gradient-hero: linear-gradient(160deg, #EDF7F1 0%, #F2F9F5 50%, #F5FBF8 100%);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -53,8 +53,8 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(ellipse at 30% 20%, rgba(27, 77, 56, 0.4) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 80%, rgba(21, 61, 44, 0.3) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 30% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(3, 199, 90, 0.06) 0%, transparent 50%);
     animation: float 8s ease-in-out infinite;
   }
 
@@ -80,14 +80,14 @@
   .partner-logos .logo-gowid {
     font-size: 20px;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary);
     letter-spacing: 0.08em;
   }
 
   .partner-logos .logo-x {
     font-size: 16px;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--text-muted);
   }
 
   .partner-logos .logo-npay {
@@ -113,14 +113,14 @@
   .partner-logos .npay-text {
     font-size: 20px;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary);
     letter-spacing: -0.02em;
   }
 
   .hero h1 {
     font-size: 28px;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
     line-height: 1.4;
     margin-bottom: 8px;
     letter-spacing: -0.03em;
@@ -130,14 +130,14 @@
     display: block;
     font-size: 34px;
     font-weight: 800;
-    color: #fff;
+    color: var(--text-primary);
     margin-top: 4px;
     letter-spacing: -0.04em;
   }
 
   .hero-sub {
     font-size: 15px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--text-muted);
     margin-top: 16px;
     letter-spacing: -0.01em;
   }
@@ -156,7 +156,7 @@
     background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 40%, #1f1f1f 70%, #111 100%);
     border-radius: 18px;
     border: 1px solid rgba(201, 168, 76, 0.35);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 168, 76, 0.15), inset 0 1px 0 rgba(201, 168, 76, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(201, 168, 76, 0.15), inset 0 1px 0 rgba(201, 168, 76, 0.1);
     overflow: hidden;
     padding: 24px 28px;
     animation: cardFloat 2.5s ease-in-out infinite;
@@ -967,7 +967,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(ellipse at 50% 50%, rgba(27, 77, 56, 0.35) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 50% 50%, rgba(16, 185, 129, 0.06) 0%, transparent 60%);
   }
 
   .final-cta-inner {
@@ -980,7 +980,7 @@
   .final-cta h2 {
     font-size: 24px;
     font-weight: 800;
-    color: #fff;
+    color: var(--text-primary);
     line-height: 1.45;
     letter-spacing: -0.03em;
     margin-bottom: 12px;
@@ -988,7 +988,7 @@
 
   .final-cta p {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-secondary);
     margin-bottom: 28px;
     line-height: 1.6;
   }
@@ -1466,22 +1466,30 @@
       실시간 데이터를 기반으로<br>
       성장 단계에 맞는 충분한 한도를 확인해보세요.
     </p>
-    <div style="margin-top:32px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.12);">
-      <p class="trust-title" style="color: rgba(255,255,255,0.6);">이미 많은 법인이 고위드와 함께합니다</p>
+    <div style="margin-top:32px; padding-top:28px; border-top:1px solid rgba(0,0,0,0.06);">
+      <p class="trust-title">이미 많은 법인이 고위드와 함께합니다</p>
       <div class="trust-stats" style="margin-bottom:0;">
         <div class="stat-item">
-          <div class="stat-num" style="color:#fff;">12,000+</div>
-          <div class="stat-label" style="color:rgba(255,255,255,0.5);">이용 법인 수</div>
+          <div class="stat-num">12,000+</div>
+          <div class="stat-label">이용 법인 수</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num" style="color:#fff;">1.2조+</div>
-          <div class="stat-label" style="color:rgba(255,255,255,0.5);">누적 결제액</div>
+          <div class="stat-num">1.2조+</div>
+          <div class="stat-label">누적 결제액</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+
+<!-- ===== FOOTER NOTE ===== -->
+<div class="footer-note">
+  <p>
+    카드 발급 및 한도는 심사 결과에 따라 달라질 수 있습니다.<br>
+    캐시백 및 적립율은 카드 상품별로 상이하며, 변동될 수 있습니다.
+  </p>
+</div>
 
 <!-- ===== FLOATING CTA ===== -->
 <div class="floating-cta">
